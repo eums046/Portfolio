@@ -63,21 +63,116 @@ canvas {
 }
 
 /* Education section styling */
+/* Education Section Styling */
 #education {
-    padding: 0;
     width: 100%;
-    height: 100vh;
-    text-align: center;
-    color: #ffffff;
-    background: linear-gradient(to bottom, #000000, #2c3e50, #2980b9, #8e44ad, #f39c12);
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    z-index: 2;
-    opacity: 1;
-    transform: translateY(0);
+    padding: 50px 0;
+    background: linear-gradient(to bottom, #000000, #2c3e50, #2980b9, #8e44ad, #f39c12);
+    color: #ffffff;
+    text-align: center;
 }
+
+#education h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #ffffff;
+    font-family: 'DM Serif Text', serif;
+}
+
+.education-container {
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.education-entry {
+    width: 90%;
+    max-width: 700px;
+    background-color: rgba(249, 249, 249, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    padding: 25px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.education-entry:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.education-entry h3 {
+    font-size: 1.8rem;
+    color: #ffffff;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.education-entry p {
+    font-size: 1.1rem;
+    color: #e0e0e0;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.education-entry .degree {
+    font-style: italic;
+    color: #f0f0f0;
+    margin-bottom: 10px;
+}
+
+.education-entry .duration {
+    font-size: 0.9rem;
+    color: #b0b0b0;
+    margin-top: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #education h2 {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+
+    .education-entry {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .education-entry h3 {
+        font-size: 1.5rem;
+    }
+
+    .education-entry p {
+        font-size: 1rem;
+    }
+}
+
+/* Entrance Animation */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
 
 .education-entry, .certificate-entry {
     opacity: 0;
@@ -90,36 +185,6 @@ canvas {
 #certificates:hover .certificate-entry {
     opacity: 1;
     transform: translateX(0);
-}
-
-#education h2 {
-    font-size: 2rem;
-    color: #ffffff;
-    margin-bottom: 20px;
-}
-
-.education-entry {
-    margin-bottom: 30px;
-    width: 70%;
-    background-color: #f9f9f9;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.education-entry h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-    color: #000000;
-}
-
-.education-entry p {
-    font-size: 1rem;
-    color: #555;
-    display: inline-block;
 }
 
 /* Certificates Section Styling */
