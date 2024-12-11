@@ -118,20 +118,20 @@ canvas {
 
 .education-entry p {
     font-size: 1.1rem;
-    color: #e0e0e0;
+    color: #000;
     line-height: 1.6;
     margin-bottom: 10px;
 }
 
 .education-entry .degree {
     font-style: italic;
-    color: #f0f0f0;
+    color: #000;
     margin-bottom: 10px;
 }
 
 .education-entry .duration {
     font-size: 0.9rem;
-    color: #b0b0b0;
+    ccolor: #000;
     margin-top: 10px;
 }
 
