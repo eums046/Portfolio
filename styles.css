@@ -60,7 +60,10 @@ canvas {
     opacity: 1;
     transform: translateX(0);
 }
-
+@media (max-width: 768px) {
+            #greeting h1 {
+                font-size: 2rem;
+            }
 /* Education section styling */
 #education {
     padding: 0;
