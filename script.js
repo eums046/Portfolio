@@ -1,3 +1,21 @@
+// Detect mobile devices
+function isMobileDevice() {
+    return window.innerWidth <= 768 || 
+           /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
+
+// Adjust layout for mobile
+function adjustLayoutForMobile() {
+    if (isMobileDevice()) {
+        document.body.classList.add('mobile-view');
+        // Additional mobile-specific adjustments
+    }
+}
+
+// Run on page load and resize
+window.addEventListener('load', adjustLayoutForMobile);
+window.addEventListener('resize', adjustLayoutForMobile);
+
 document.addEventListener('DOMContentLoaded', function () {
     // Function to create stars
     function createStars() {
