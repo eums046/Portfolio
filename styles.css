@@ -17,7 +17,7 @@ canvas {
     top: 0;
     left: 0;
     z-index: -1;
-    opacity: 0.5; /* Make particles more subtle */
+    opacity: 0.5;
     width: 100%;
     height: 100%;
 }
@@ -41,12 +41,13 @@ canvas {
 /* Styling for h1 and p inside greeting */
 #greeting h1 {
     font-family: 'DM Serif Text', serif;
-    font-size: 2.5rem; /* Adjusted font size */
+    font-size: 2.5rem;
     white-space: nowrap;
     overflow: hidden;
     width: 0;
+    border-right: 3px solid #fff;
     animation: typing 3s steps(30) 1s forwards, blink 0.75s step-end infinite;
-    color: #fffdfd; /* Color for the typewriter text */
+    color: #fffdfd;
 }
 
 #paragraph {
@@ -60,10 +61,7 @@ canvas {
     opacity: 1;
     transform: translateX(0);
 }
-@media (max-width: 768px) {
-            #greeting h1 {
-                font-size: 2rem;
-            }
+
 /* Education section styling */
 #education {
     padding: 0;
@@ -71,14 +69,14 @@ canvas {
     height: 100vh;
     text-align: center;
     color: #ffffff;
-    background: linear-gradient(to bottom, #000000, #2c3e50, #2980b9, #8e44ad, #f39c12); /* Gradient */
+    background: linear-gradient(to bottom, #000000, #2c3e50, #2980b9, #8e44ad, #f39c12);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     z-index: 2;
-    opacity: 1;  /* Change opacity to 1 to make it visible */
-    transform: translateY(0);  /* Adjust to have no translate effect */
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .education-entry, .certificate-entry {
@@ -107,8 +105,7 @@ canvas {
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    opacity: 0;
-    transform: translateX(-100%);
+    display: flex;
     align-items: center;
     justify-content: center;
 }
@@ -141,11 +138,10 @@ canvas {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    opacity: 1; /* Change opacity to 1 to make it visible */
-    transform: translateY(0); /* Adjust to have no translate effect */
+    opacity: 1;
+    transform: translateY(0);
 }
 
-/* Title for the Certificates Section */
 #certificates h2 {
     font-size: 2rem;
     color: #000000;
@@ -159,8 +155,6 @@ canvas {
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     width: 70%;
-    opacity: 0;
-    transform: translateX(-100%);
 }
 
 .certificate-entry h3 {
@@ -186,10 +180,62 @@ canvas {
     text-decoration: underline;
 }
 
+/* Download Button Styling */
+#downloadBtn {
+    width: 150px;
+    background-color: yellow;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    opacity: 1;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    margin-top: 20px;
+    text-align: center;
+    border-radius: 8px;
+    color: #000;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#downloadBtn:hover {
+    background-color: #e6c100;
+    color: #000;
+    transform: scale(1.05);
+}
+
+#downloadBtn:focus {
+    outline: 3px solid #333;
+}
+
+/* Stars Container Styling */
+.star-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.star {
+    position: absolute;
+    background-color: #fff;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: twinkle 1.5s infinite alternate;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     #greeting {
         padding: 20px;
+    }
+
+    #greeting h1 {
+        font-size: 2rem;
     }
 
     #education {
@@ -213,108 +259,18 @@ canvas {
         font-size: 0.9rem;
     }
 }
-/* Typing animation keyframes */
+
+/* Animations */
 @keyframes typing {
-    from {
-        width: 0;
-    }
-    to {
-        width: 100%;
-    }
+    from { width: 0; }
+    to { width: 100%; }
 }
 
-/* Blink animation for typewriter */
 @keyframes blink {
-    50% {
-        border-color: transparent;
-    }
+    50% { border-color: transparent; }
 }
 
-/* Greeting section styling */
-#greeting {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    padding: 40px;
-    width: 100%;
-    max-width: 900px;
-    text-align: center;
-    height: 100vh;
-    position: relative;
-    z-index: 1;
-}
-
-/* Styling for h1 inside greeting (typewriter effect) */
-#greeting h1 {
-    align-items: center;
-    justify-content: center;
-    font-family: 'DM Serif Text', serif;
-    font-size: 2.5rem;
-    white-space: nowrap;
-    overflow: hidden;
-    width: 0;
-    border-right: 3px solid #fff;
-    animation: typing 3s steps(30) 1s forwards, blink 0.75s step-end infinite;
-    color: #fffdfd;
-}
-#downloadBtn {
-    width: 150px;
-    background-color: yellow;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    opacity: 1;
-    transform: translateY(20px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-    margin-top: 20px;  /* Adjust spacing from the paragraph */
-    text-align: center;
-    border-radius: 8px;  /* Rounded corners */
-    color: #000;  /* Text color */
-    display: block;  /* Make the button a block-level element */
-    margin-left: auto;
-    margin-right: auto;  /* Automatically center the button */
-}
-
-/* Hover effect for download button */
-#downloadBtn:hover {
-    background-color: #e6c100;
-    color: #000;
-    transform: scale(1.05);
-}
-
-/* Focus effect for download button */
-#downloadBtn:focus {
-    outline: 3px solid #333;
-}
-
-/* Styling for the stars container */
-.star-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: -1; /* Ensure stars are behind content */
-}
-
-/* Styling for individual stars */
-.star {
-    position: absolute;
-    background-color: #fff;
-    border-radius: 50%;
-    opacity: 0.8;
-    animation: twinkle 1.5s infinite alternate; /* Add twinkling effect */
-}
-
-/* Animation for twinkling stars */
 @keyframes twinkle {
-    0% {
-        opacity: 0.8;
-    }
-    100% {
-        opacity: 1;
-    }
+    0% { opacity: 0.8; }
+    100% { opacity: 1; }
 }
