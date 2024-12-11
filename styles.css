@@ -1,0 +1,317 @@
+/* Body styling */
+body {
+    font-family: 'Roboto Flex', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background: #000;
+    color: #f9f9f9;
+}
+
+/* Particle canvas styling (Parallax effect) */
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    opacity: 0.5; /* Make particles more subtle */
+    width: 100%;
+    height: 100%;
+}
+
+/* Greeting section styling */
+#greeting {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 40px;
+    width: 100%;
+    max-width: 900px;
+    text-align: center;
+    height: 100vh;
+    position: relative;
+    z-index: 1;
+}
+
+/* Styling for h1 and p inside greeting */
+#greeting h1 {
+    font-family: 'DM Serif Text', serif;
+    font-size: 2.5rem; /* Adjusted font size */
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+    animation: typing 3s steps(30) 1s forwards, blink 0.75s step-end infinite;
+    color: #fffdfd; /* Color for the typewriter text */
+}
+
+#paragraph {
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+/* Show paragraph on hover */
+#greeting:hover #paragraph {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Education section styling */
+#education {
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    color: #ffffff;
+    background: linear-gradient(to bottom, #000000, #2c3e50, #2980b9, #8e44ad, #f39c12); /* Gradient */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    opacity: 1;  /* Change opacity to 1 to make it visible */
+    transform: translateY(0);  /* Adjust to have no translate effect */
+}
+
+.education-entry, .certificate-entry {
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+/* Show education and certificate entries on hover */
+#education:hover .education-entry,
+#certificates:hover .certificate-entry {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+#education h2 {
+    font-size: 2rem;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.education-entry {
+    margin-bottom: 30px;
+    width: 900px;
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateX(-100%);
+    align-items: center;
+    justify-content: center;
+}
+
+.education-entry h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #000000;
+}
+
+.education-entry p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Certificates Section Styling */
+#certificates {
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    color: #ffffff;
+    background-image: url('sunset 2.jpg');
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 1; /* Change opacity to 1 to make it visible */
+    transform: translateY(0); /* Adjust to have no translate effect */
+}
+
+/* Title for the Certificates Section */
+#certificates h2 {
+    font-size: 2rem;
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+.certificate-entry {
+    margin-bottom: 30px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 900px;
+    opacity: 0;
+    transform: translateX(-100%);
+}
+
+.certificate-entry h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.certificate-entry p {
+    font-size: 1rem;
+    color: #555;
+}
+
+.certificate-entry a {
+    font-size: 1rem;
+    color: #333;
+    text-decoration: none;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+.certificate-entry a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #greeting {
+        padding: 20px;
+    }
+
+    #education {
+        padding: 20px;
+        margin-top: 30px;
+    }
+
+    .education-entry {
+        padding: 10px;
+    }
+
+    #education h2 {
+        font-size: 1.8rem;
+    }
+
+    .education-entry h3 {
+        font-size: 1.3rem;
+    }
+
+    .education-entry p {
+        font-size: 0.9rem;
+    }
+}
+/* Typing animation keyframes */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+/* Blink animation for typewriter */
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+/* Greeting section styling */
+#greeting {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 40px;
+    width: 100%;
+    max-width: 900px;
+    text-align: center;
+    height: 100vh;
+    position: relative;
+    z-index: 1;
+}
+
+/* Styling for h1 inside greeting (typewriter effect) */
+#greeting h1 {
+    align-items: center;
+    justify-content: center;
+    font-family: 'DM Serif Text', serif;
+    font-size: 2.5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+    border-right: 3px solid #fff;
+    animation: typing 3s steps(30) 1s forwards, blink 0.75s step-end infinite;
+    color: #fffdfd;
+}
+#downloadBtn {
+    width: 150px;
+    background-color: yellow;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    opacity: 1;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    margin-top: 20px;  /* Adjust spacing from the paragraph */
+    text-align: center;
+    border-radius: 8px;  /* Rounded corners */
+    color: #000;  /* Text color */
+    display: block;  /* Make the button a block-level element */
+    margin-left: auto;
+    margin-right: auto;  /* Automatically center the button */
+}
+
+/* Hover effect for download button */
+#downloadBtn:hover {
+    background-color: #e6c100;
+    color: #000;
+    transform: scale(1.05);
+}
+
+/* Focus effect for download button */
+#downloadBtn:focus {
+    outline: 3px solid #333;
+}
+
+/* Styling for the stars container */
+.star-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1; /* Ensure stars are behind content */
+}
+
+/* Styling for individual stars */
+.star {
+    position: absolute;
+    background-color: #fff;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: twinkle 1.5s infinite alternate; /* Add twinkling effect */
+}
+
+/* Animation for twinkling stars */
+@keyframes twinkle {
+    0% {
+        opacity: 0.8;
+    }
+    100% {
+        opacity: 1;
+    }
+}
