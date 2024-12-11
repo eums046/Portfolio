@@ -111,7 +111,7 @@ canvas {
 
 .education-entry h3 {
     font-size: 1.8rem;
-   color: #000;
+    color: #000;
     margin-bottom: 15px;
     font-weight: bold;
 }
@@ -131,7 +131,7 @@ canvas {
 
 .education-entry .duration {
     font-size: 0.9rem;
-    ccolor: #000;
+    color: #000;
     margin-top: 10px;
 }
 
