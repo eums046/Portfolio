@@ -95,7 +95,7 @@ canvas {
 
 .education-entry {
     width: 70%;
-    background-color: rgba(249, 249, 249, 0.1);
+    background-color: white;
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 12px;
     padding: 25px;
