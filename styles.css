@@ -220,9 +220,10 @@ canvas {
 }
 
 .certificate-entry h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-    color: #333;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #ffffff;
+    font-family: 'DM Serif Text', serif;
 }
 
 .certificate-entry p {
