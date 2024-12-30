@@ -1,84 +1,55 @@
-function isMobileDevice() {
-    const userAgent = navigator.userAgent;
-    return window.innerWidth <= 768 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent);
-}
+document.addEventListener('DOMContentLoaded', function() {
+    const navLinks = document.querySelectorAll('nav a');
+    const contactForm = document.getElementById('contact-form');
 
-function adjustLayoutForMobile() {
-    document.body.classList.toggle('mobile-view', isMobileDevice());
-}
+    emailjs.init('DlThe4wmBORnHsHvx');
 
-function createStars(numStars = 100) {
-    const starContainer = document.createElement('div');
-    starContainer.className = 'star-container';
-    document.body.appendChild(starContainer);
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
 
-    const fragment = document.createDocumentFragment();
-
-    for (let i = 0; i < numStars; i++) {
-        const star = document.createElement('div');
-        const size = Math.random() * 3 + 1; 
-        const positionX = Math.random() * 100; 
-        const positionY = Math.random() * 100; 
-
-        Object.assign(star.style, {
-            width: `${size}px`,
-            height: `${size}px`,
-            top: `${positionY}vh`,
-            left: `${positionX}vw`,
-            position: 'absolute',
+            window.scrollTo({
+                top: targetElement.offsetTop,
+                behavior: 'smooth'
+            });
         });
+    });
 
-        star.className = 'star';
-        fragment.appendChild(star);
+    function validateEmail(email) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(String(email).toLowerCase());
     }
 
-    starContainer.appendChild(fragment);
-}
-function handleHoverAnimation() {
-    const sections = [
-        { id: 'greeting', entries: ['#paragraph'] },
-        { id: 'education', entries: ['.education-entry'] },
-        { id: 'certificates', entries: ['.certificate-entry'] }
-    ];
-
-    sections.forEach(({ id, entries }) => {
-        const section = document.getElementById(id);
-        const elements = entries.flatMap(entry => document.querySelectorAll(entry));
-
-        if (section) {
-            section.addEventListener('mouseenter', () => {
-                elements.forEach(el => {
-                    el.style.opacity = '1';
-                    el.style.transform = 'translateX(0)';
-                });
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
+            
+            if (name === '' || email === '' || message === '') {
+                alert('Please fill in all fields.');
+                return;
+            }
+            
+            if (!validateEmail(email)) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+            
+            emailjs.send('service_h4jt00c', 'template_gdsy5nr', {
+                name: name,
+                email: email,
+                message: message
+            }).then(function(response) {
+                alert('Form submitted successfully!');
+                contactForm.reset();
+            }, function(error) {
+                alert('Failed to send the form. Please try again later.');
             });
-
-            section.addEventListener('mouseleave', () => {
-                elements.forEach(el => {
-                    el.style.opacity = '0';
-                    el.style.transform = 'translateX(-100%)';
-                });
-            });
-        }
-    });
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-    createStars();
-    handleHoverAnimation();
-
-    const greeting = document.getElementById('greeting');
-    const downloadBtn = document.getElementById('downloadBtn');
-
-    if (greeting && downloadBtn) {
-        greeting.addEventListener('mouseenter', () => {
-            setTimeout(() => {
-                downloadBtn.style.display = 'block';
-            }, 1500);
         });
     }
 });
-
-// Attach event listeners for responsive layout adjustments
-window.addEventListener('load', adjustLayoutForMobile);
-window.addEventListener('resize', adjustLayoutForMobile);

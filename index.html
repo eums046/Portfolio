@@ -1,67 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title>Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio website of Eumi Biag - Web Developer">
+    <title>Eumi Biag - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
 </head>
-
 <body>
-    <section id="greeting">
-        <div class="hello">
-            <h1 id="typewriter">Hi There!</h1>
-            <p id="paragraph">I’m Eumi Biag, a passionate and creative web developer who loves bringing ideas to life through clean and responsive designs. I specialize in crafting user-friendly websites using HTML, CSS, and JavaScript, ensuring they look great and function seamlessly on any device. I enjoy solving problems, integrating APIs, and constantly learning new technologies to improve my skills. For me, every project is an opportunity to combine creativity and technical expertise to deliver something unique and impactful.</p>
-            <a href="Yalissa-Eumipreal-T.-Biag_RESUME.pdf" button id="downloadBtn" style="display: none;">
-                Download My Resume
-            </a>        
+    <nav class="glass-nav">
+        <div class="nav-content">
+            <div class="logo">
+                <img src="logo.png" alt="Eumi Biag Logo" class="logo-image">
+            </div>
+            <div class="nav-links">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#education" class="nav-link">Education</a>
+                <a href="#certificates" class="nav-link">Certificates</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="glitch" data-text="Hi, I'm Eumi">Hi, I'm Eumi</h1>
+            <p class="typewriter">A passionate web developer who enjoys crafting digital experiences.</p>
+            <div class="cta-container">
+                <a href="Yalissa-Eumipreal-T.-Biag_RESUME.pdf" class="cta-button secondary">Download CV</a>
+            </div>
+        </div>
+        <div class="hero-background">
         </div>
     </section>
 
-    <!-- Education Section -->
-    <section id="education">
-        <h2>Education</h2>
-        <div class="education-entry">
-            <h3>Bachelor of Science in Information Technology with Specialization in Web and Mobile Applications</h3>
-            <p>FEU Institute of Technology | Graduation Year: 2026</p>
-            <p>Students taking up BSIT with specialization in Web and Mobile Application are
-introduced to different techniques of technology assimilation and deployment in
-the real-world environment. They will design, employ, and deploy the needs of
-information resources to support an organization. By specializing in Web and
-Mobile Applications, they will gain a broad foundation in user interaction and
-global communication as well as digital technologies using state-of-the-art
-computer systems focused on the development of the mobile web. -FEU TECH Student Handbook</p>
-        </div>
-
-        <div class="education-entry">
-            <h3>Senior High School</h3>
-            <p>Adamson University | Graduation Year: 2022</p>
-            <p>The Humanities and Social Sciences (HUMSS) program at Adamson University provided a strong foundation in critical thinking, research, and social analysis. This track aimed to develop my skills in communication, problem-solving, and understanding societal issues through subjects like psychology, philosophy, sociology, and literature. The curriculum emphasized both theoretical and practical applications of human behavior and societal dynamics, preparing me to engage effectively with various fields such as education, law, journalism, and social work.</p>
-            <p>Graduated With Honors</p>
-        </div>
-    </section>
-
-    <section id="certificates">
-        <h2>Certifications</h2>
-        <div class="certificate-entry">
-            <h3>Google Cybersecurity Certificate</h3>
-            <p>Issued by: <strong>Coursera</strong></p>
-            <p>Earned in November 2024</p>
-            <p>This professional certificate provides foundational cybersecurity skills, including network security, cryptography, risk management, and more, through hands-on learning.</p>
-            <a href="https://coursera.org/share/a732f95646a05e663ffb02c81af792d1" target="_blank">View Certificate</a>
-        </div>
-        <div class="certificate-entry">
-            <h3>🎉 Stay Tuned! Exciting Certificate Coming Soon! 🚀</h3>
-            <p>Get ready for an amazing new addition to my achievements!</p>
-        </div>
-        
-    </section>
+    <section id="education" class="glass-container">
+        <h2 class="section-title">Education</h2>
+        <div class="education-grid">
+            <div class="education-card">
+                <h3>Bachelor of Science in Information Technology</h3>
+                <p class="institution">FEU Institute of Technology</p>
+                <p class="date">Graduation Year: 2026</p>
+                <p class="description">Specialization in Web and Mobile Applications. The program covers various techniques of technology assimilation and deployment in real-world environments. Students design, employ, and deploy information resources to support organizations, gaining a broad foundation in web and mobile application development.</p>
+            </div>
     
+            <div class="education-card">
+                <h3>Senior High School</h3>
+                <p class="institution">Adamson University</p>
+                <p class="date">Graduation Year: 2022</p>
+                <p class="description">Humanities and Social Sciences (HUMSS) program. The curriculum emphasized critical thinking, research, and social analysis, preparing students for various fields such as education, law, journalism, and social work. Graduated with honors.</p>
+            </div>
+        </div>
+    </section>
 
+    <section id="certificates" class="glass-container">
+        <h2 class="section-title">Certifications</h2>
+        <div class="certificates-grid">
+            <div class="certificate-card">
+                <div class="certificate-icon">
+                    <i class="fab fa-google"></i>
+                </div>
+                <h3>Google Cybersecurity Certificate</h3>
+                <p class="issuer">Issued by: <strong>Coursera</strong></p>
+                <p class="date">Earned in November 2024</p>
+                <p class="description">Foundational cybersecurity skills including network security, cryptography, and risk management.</p>
+                <a href="https://www.coursera.org/account/accomplishments/specialization/KH363XWJLH0G" class="view-btn" target="_blank">View Certificate</a>
+            </div>
+    
+            <div class="certificate-card">
+                <div class="certificate-icon">
+                    <i class="fab fa-free-code-camp"></i>
+                </div>
+                <h3>Responsive Web Design Certification</h3>
+                <p class="issuer">Issued by: <strong>freeCodeCamp</strong></p>
+                <p class="date">Earned in December 2024</p>
+                <p class="description">Comprehensive web design skills including HTML5, CSS3, Flexbox, CSS Grid, and responsive design principles.</p>
+                <a href="https://www.freecodecamp.org/certification/eumipreal/responsive-web-design" class="view-btn" target="_blank">View Certificate</a>
+            </div>
+
+            <div class="certificate-card">
+                <div class="certificate-icon">
+                    <i class="fab fa-google"></i>
+                </div>
+                <h3>Tools of the Trade: Linux and SQL Certification</h3>
+                <p class="issuer">Issued by: <strong>Coursera</strong></p>
+                <p class="date">Earned in December 2024</p>
+                <p class="description">This certification covers essential tools and skills for IT professionals, including Linux command line, shell scripting, and SQL database management. It provides hands-on experience with system administration, file management, and database querying, preparing you for real-world IT environments.</p>
+                <a href="https://www.coursera.org/account/accomplishments/verify/QV7YXAM06G68" class="view-btn" target="_blank">View Certificate</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="glass-container">
+        <h2 class="section-title">Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="assets/projects/project1.jpg" alt="Project 1">
+                </div>
+                <div class="project-content">
+                    <h3>Project Title 1</h3>
+                    <p class="project-description">Brief description of the project, highlighting the key features and technologies used.</p>
+                    <a href="https://github.com/yourusername/project1" class="view-btn" target="_blank">View on GitHub</a>
+                    <a href="https://live-demo-link.com" class="view-btn secondary" target="_blank">Live Demo</a>
+                </div>
+            </div>
+    
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="assets/projects/project2.jpg" alt="Project 2">
+                </div>
+                <div class="project-content">
+                    <h3>Project Title 2</h3>
+                    <p class="project-description">Brief description of the project, highlighting the key features and technologies used.</p>
+                    <a href="https://github.com/yourusername/project2" class="view-btn" target="_blank">View on GitHub</a>
+                    <a href="https://live-demo-link.com" class="view-btn secondary" target="_blank">Live Demo</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="contact" class="glass-container">
+        <h2 class="section-title">Contact Me</h2>
+        <form id="contact-form" class="contact-form">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="cta-button">Send Message</button>
+        </form>
+    </section>
+    <footer class="glass-footer">
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="https://github.com/eums046" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/eumi-biag-139039257/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
+            <p>© 2024 Eumi Biag. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
 </body>
-
 </html>
