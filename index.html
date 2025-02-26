@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Portfolio website of Eumi Biag - Web Developer">
     <title>Eumi Biag - Portfolio</title>
-    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    
+    <link rel="stylesheet" href="styles.css">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </head>
 
@@ -36,24 +36,114 @@
         </div>
     </nav>
 
-    <section id="home" class="py-5 text-center">
-        <div class="container">
-            <h1>Welcome to My Portfolio</h1>
-            <p>Hi, I'm Eumi Biag, a passionate Web Developer.</p>
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="glitch" data-text="Hi, I'm Eumi">Hi, I'm Eumi</h1>
+            <p class="typewriter">A passionate web developer who enjoys crafting digital experiences.</p>
+            <div class="cta-container">
+                <a href="Yalissa-Eumipreal-T.-Biag_RESUME.pdf" class="btn btn-primary btn-lg">Download CV</a>
+            </div>
         </div>
+        <div class="hero-background"></div>
     </section>
 
     <section id="education" class="py-5">
         <div class="container">
-            <h2>Education</h2>
-            <p>Details about your education here.</p>
+            <h2 class="section-title">Education</h2>
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="card custom-card h-100">
+                        <div class="card-body">
+                            <h3>Bachelor of Science in Information Technology</h3>
+                            <p class="institution">FEU Institute of Technology</p>
+                            <p class="date">Graduation Year: 2026</p>
+                            <p>Specialization in Web and Mobile Applications. The program covers various techniques of technology assimilation and deployment in real-world environments. Students design, employ, and deploy information resources to support organizations, gaining a broad foundation in web and mobile application development.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="card custom-card h-100">
+                        <div class="card-body">
+                            <h3>Senior High School</h3>
+                            <p class="institution">Adamson University</p>
+                            <p class="date">Graduation Year: 2022</p>
+                            <p>Humanities and Social Sciences (HUMSS) program. The curriculum emphasized critical thinking, research, and social analysis, preparing students for various fields such as education, law, journalism, and social work. Graduated with honors.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section id="certificates" class="py-5">
+    <section id="certificates">
         <div class="container">
-            <h2>Certificates</h2>
-            <p>Details about your certifications here.</p>
+            <h2 class="section-title">Certificates</h2>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+                <!-- Certificate 1 -->
+                <div class="col">
+                    <div class="card custom-card h-100 text-center">
+                        <div class="card-body">
+                            <div class="certificate-icon">
+                                <i class="fab fa-google"></i>
+                            </div>
+                            <h3>Google Cybersecurity Certificate</h3>
+                            <p class="issuer">Coursera</p>
+                            <p class="date">November 2024</p>
+                            <p>Foundational cybersecurity skills including network security, cryptography, and risk management.</p>
+                            <a href="https://www.coursera.org/account/accomplishments/specialization/KH363XWJLH0G" class="btn btn-sm btn-outline-primary mt-3" target="_blank">View Certificate</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Certificate 2 -->
+                <div class="col">
+                    <div class="card custom-card h-100 text-center">
+                        <div class="card-body">
+                            <div class="certificate-icon">
+                                <i class="fab fa-free-code-camp"></i>
+                            </div>
+                            <h3>Responsive Web Design</h3>
+                            <p class="issuer">freeCodeCamp</p>
+                            <p class="date">December 2024</p>
+                            <p>Comprehensive web design skills including HTML5, CSS3, Flexbox, CSS Grid, and responsive design principles.</p>
+                            <a href="https://www.freecodecamp.org/certification/eumipreal/responsive-web-design" class="btn btn-sm btn-outline-primary mt-3" target="_blank">View Certificate</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Certificate 3 -->
+                <div class="col">
+                    <div class="card custom-card h-100 text-center">
+                        <div class="card-body">
+                            <div class="certificate-icon">
+                                <i class="fab fa-google"></i>
+                            </div>
+                            <h3>Tools of the Trade: Linux and SQL</h3>
+                            <p class="issuer">Coursera</p>
+                            <p class="date">December 2024</p>
+                            <p>Essential tools for IT professionals, including Linux command line, shell scripting, and SQL database management.</p>
+                            <a href="https://www.coursera.org/account/accomplishments/verify/QV7YXAM06G68" class="btn btn-sm btn-outline-primary mt-3" target="_blank">View Certificate</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Certificate 4 -->
+                <div class="col">
+                    <div class="card custom-card h-100 text-center">
+                        <div class="card-body">
+                            <div class="certificate-icon">
+                                <i class="fa-solid fa-server"></i>
+                            </div>
+                            <h3>CCST Networking</h3>
+                            <p class="issuer">Cisco</p>
+                            <p class="date">February 2025</p>
+                            <p>The CCST Networking certification validates the essential knowledge and skills necessary for work-ready networking.</p>
+                            <a href="https://www.credly.com/badges/4d0bedd8-5839-4c7c-85e7-72c833d78ba7/linked_in_profile" class="btn btn-sm btn-outline-primary mt-3" target="_blank">View Certificate</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -63,7 +153,7 @@
             <div class="row g-4">
                 <div class="col-lg-6">
                     <div class="card">
-                        <img src="project1.png" class="card-img-top" alt="Project 1">
+                        <img src="project1.png" class="card-img-top" alt="Youtunes Project">
                         <div class="card-body">
                             <h3>Youtunes</h3>
                             <p class="card-text">Music player which integrates the Youtube API.</p>
@@ -76,13 +166,13 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="card">
-                        <img src="project2.png" class="card-img-top" alt="Project 2">
+                        <img src="project2.png" class="card-img-top" alt="Safe Space Society Project">
                         <div class="card-body">
                             <h3>Safe Space Society</h3>
-                            <p class="card-text">An inclusive online community for LGBTQIA+ individuals and allies.</p>
+                            <p class="card-text">An up and coming inclusive online community dedicated to fostering a supportive and accepting environment for LGBTQIA+ individuals and allies. This is implemented using HTML, CSS, and JavaScript.</p>
                             <div class="mt-3">
                                 <a href="https://github.com/eums046/SafeSpaceSociety" class="btn btn-primary me-2" target="_blank">View on GitHub</a>
-                                <a href="https://safespacesociety.vercel.app/" class="btn btn-outline-primary" target="_blank">Live Demo</a>
+                                <a href="https://eums046.github.io/SafeSpaceSociety/" class="btn btn-outline-primary" target="_blank">Live Demo</a>
                             </div>
                         </div>
                     </div>
@@ -93,25 +183,44 @@
 
     <section id="contact" class="py-5">
         <div class="container">
-            <h2>Contact Me</h2>
-            <form id="contact-form">
-                <div class="mb-3">
-                    <label for="name" class="form-label">Name</label>
-                    <input type="text" class="form-control" id="name" required>
+            <h2 class="section-title">Contact Me</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="card custom-card">
+                        <div class="card-body">
+                            <form id="contact-form">
+                                <div class="mb-3">
+                                    <label for="name" class="form-label">Name</label>
+                                    <input type="text" class="form-control" id="name" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="email" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="message" class="form-label">Message</label>
+                                    <textarea class="form-control" id="message" rows="4" required></textarea>
+                                </div>
+                                <div id="form-alert"></div>
+                                <button type="submit" class="btn btn-primary">Send Message</button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
-                <div class="mb-3">
-                    <label for="email" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="email" required>
-                </div>
-                <div class="mb-3">
-                    <label for="message" class="form-label">Message</label>
-                    <textarea class="form-control" id="message" rows="3" required></textarea>
-                </div>
-                <div id="form-alert"></div>
-                <button type="submit" class="btn btn-primary">Send Message</button>
-            </form>
+            </div>
         </div>
     </section>
+
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container text-center">
+            <div class="mb-3">
+                <a href="https://github.com/eums046" class="text-white me-3" target="_blank"><i class="fab fa-github fa-2x"></i></a>
+                <a href="https://www.linkedin.com/in/eumi-biag-139039257/" class="text-white me-3" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
+                <a href="mailto:your.email@example.com" class="text-white"><i class="fas fa-envelope fa-2x"></i></a>
+            </div>
+            <p class="mb-0">&copy; 2025 Eumi Biag. All rights reserved.</p>
+        </div>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
