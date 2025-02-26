@@ -1,319 +1,309 @@
-:root {
-    --primary-color: #FF6500;
-    --bg-color: #04274d;
-    --text-color: #EAEAEA;
-    --heading-color: #EAEAEA;
-    --glass-bg: #003161;
-}
+ :root {
+            --primary-color: #FF6500;
+            --bg-color: #04274d;
+            --text-color: #EAEAEA;
+            --heading-color: #EAEAEA;
+            --glass-bg: #003161;
+        }
 
-.logo {
-    display: flex;
-    align-items: center;
-}
+        body {
+            background: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Poppins', sans-serif;
+        }
 
-.logo-image {
-    width: auto; 
-    height: 50px;
-    margin-right: 7px; 
-}
+        /* Navbar */
+        .navbar {
+            background-color: var(--glass-bg) !important;
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+        }
 
-.logo-text {
-    font-size: 2rem;
-    color: var(--primary-color);
-    font-weight: bold;
-}
+        .navbar-brand img {
+            height: 50px;
+        }
 
-body {
-    background: var(--bg-color);
-    color: var(--text-color);
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
-}
+        .navbar-nav .nav-link {
+            color: var(--text-color) !important;
+            position: relative;
+            margin: 0 1rem;
+        }
 
-.glass-nav {
-    background: var(--glass-bg);
-    backdrop-filter: blur(10px);
-    padding: 1rem 2rem;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 100;
-}
+        .navbar-nav .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-color);
+            transition: width 0.3s;
+        }
 
-.nav-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-}
+        .navbar-nav .nav-link:hover::after,
+        .navbar-nav .nav-link.active::after {
+            width: 100%;
+        }
 
-.nav-links {
-    display: flex;
-    gap: 2rem;
-}
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            color: var(--heading-color);
+            overflow: hidden;
+        }
 
-.nav-link {
-    color: var(--text-color);
-    text-decoration: none;
-    font-size: 1.1rem;
-    transition: color 0.3s;
-    position: relative;
-}
+        .hero-background {
+            background-image: url(bg.avif);
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            background-size: cover;
+            background-position: center;
+            transform: scale(1.1);
+        }
 
-.nav-link::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: var(--primary-color);
-    transition: width 0.3s;
-}
+        .hero-content {
+            z-index: 1;
+        }
 
-.nav-link:hover::after {
-    width: 100%;
-}
+        /* Glass Containers */
+        .glass-section {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem auto;
+        }
 
-.hero {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    text-align: center;
-    color: var(--heading-color);
-    position: relative;
-    overflow: hidden;
-}
+        .section-title {
+            color: var(--heading-color);
+            text-align: center;
+            margin-bottom: 2rem;
+        }
 
-.hero-content {
-    z-index: 1;
-}
+        /* Cards */
+        .custom-card {
+            background: var(--glass-bg);
+            border-radius: 15px;
+            padding: 2rem;
+            transition: transform 0.3s;
+            height: 100%;
+        }
 
-.cta-container {
-    margin-top: 2rem;
-}
+        .custom-card:hover {
+            transform: translateY(-10px);
+        }
 
-.cta-button {
-    display: inline-block;
-    padding: 0.8rem 1.5rem;
-    background: var(--primary-color);
-    color: white;
-    text-decoration: none;
-    border-radius: 25px;
-    transition: transform 0.3s, box-shadow 0.3s;
-    margin-right: 0.5rem;
-}
+        .custom-card h3 {
+            color: var(--heading-color);
+        }
 
-.cta-button.secondary {
-    background: transparent;
-    border: 2px solid var(--primary-color);
-    color: var(--primary-color);
-}
+        .custom-card .institution,
+        .custom-card .issuer {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
 
-.cta-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(243, 156, 18, 0.4);
-}
+        .custom-card .date {
+            font-style: italic;
+            color: var(--text-color);
+        }
 
-    .hero-background {
-        background-image: url(bg.avif);
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        z-index: 0;
-        background-size: cover;
-        background-position: center;
-        transform: scale(1.1);
-    }
+        .certificate-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
 
-.glass-container {
-    background: var(--glass-bg);
-    backdrop-filter: blur(10px);
-    padding: 2rem;
-    border-radius: 15px;
-    margin: 2rem auto;
-    max-width: 1200px;
-}
+        /* Buttons */
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            border-radius: 25px;
+            padding: 0.8rem 1.5rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
 
-.section-title {
-    text-align: center;
-    color: var(--heading-color);
-    margin-bottom: 2rem;
-}
+        .btn-outline-primary {
+            color: var(--primary-color);
+            border-color: var(--primary-color);
+            background: transparent;
+            border-radius: 25px;
+            padding: 0.8rem 1.5rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
 
-.education-grid, .certificates-grid, .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-}
+        .btn-primary:hover,
+        .btn-outline-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(243, 156, 18, 0.4);
+        }
 
-.education-card, .certificate-card, .project-card {
-    background: var(--glass-bg);
-    backdrop-filter: blur(10px);
-    border-radius: 15px;
-    padding: 2rem;
-    transition: transform 0.3s;
-    position: relative;
-    overflow: hidden;
-}
+        /* Form */
+        .contact-form {
+            background: var(--glass-bg);
+            border-radius: 15px;
+            padding: 2rem;
+        }
 
-.education-card:hover, .certificate-card:hover, .project-card:hover {
-    transform: translateY(-10px);
-}
+        .form-control {
+            background: transparent;
+            border: 1px solid var(--primary-color);
+            color: var(--text-color);
+        }
 
-.education-card h3, .certificate-card h3, .project-card h3 {
-    margin-top: 0;
-    color: var(--heading-color);
-}
+        .form-control:focus {
+            background: transparent;
+            color: var(--text-color);
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 0.25rem rgba(255, 101, 0, 0.25);
+        }
 
-.education-card .institution, .certificate-card .issuer, .project-card .project-description {
-    font-weight: bold;
-    color: var(--primary-color);
-}
+        .form-label {
+            color: var(--heading-color);
+        }
 
-.education-card .date, .certificate-card .date, .project-card .project-description {
-    font-style: italic;
-    color: var(--text-color);
-}
+        /* Footer */
+        .footer {
+            background: var(--glass-bg);
+            text-align: center;
+            padding: 2rem;
+            border-radius: 15px;
+            margin-top: 2rem;
+        }
 
-.education-card .description, .certificate-card .description, .project-card .project-description {
-    margin: 1rem 0;
-    color: var(--text-color);
-}
+        .social-links {
+            font-size: 1.5rem;
+        }
 
-.certificate-icon {
-    font-size: 2.5rem;
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-}
+        .social-links a {
+            color: var(--primary-color);
+            margin: 0 0.5rem;
+            transition: color 0.3s;
+        }
 
-.view-btn {
-    display: inline-block;
-    padding: 0.8rem 1.5rem;
-    background: var(--primary-color);
-    color: white;
-    text-decoration: none;
-    border-radius: 25px;
-    transition: transform 0.3s, box-shadow 0.3s;
-    margin-right: 0.5rem;
-}
+        .social-links a:hover {
+            color: var(--heading-color);
+        }
 
-.view-btn.secondary {
-    background: transparent;
-    border: 2px solid var(--primary-color);
-    color: var(--primary-color);
-}
-
-.view-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(243, 156, 18, 0.4);
-}
-
-.project-image img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-.project-content {
-    padding: 1.5rem;
-}
-
-.glass-footer {
-    background: var(--glass-bg);
-    backdrop-filter: blur(10px);
-    padding: 2rem;
-    text-align: center;
-    border-radius: 15px;
-    margin: 2rem auto;
-    max-width: 1200px;
-}
-
-.footer-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.social-links {
-    display: flex;
-    gap: 1rem;
-    margin-bottom: 1rem;
-}
-
-.social-links a {
-    color: var(--primary-color);
-    font-size: 1.5rem;
-    transition: color 0.3s;
-}
-
-.social-links a:hover {
-    color: var(--heading-color);
-}
-
-footer p {
-    color: var(--text-color);
-}
-.contact-form {
-    background: var(--glass-bg);
-    backdrop-filter: blur(10px);
-    padding: 2rem;
-    border-radius: 15px;
-    margin: 2rem auto;
-    max-width: 600px;
-    color: var(--text-color);
-}
-
-.contact-form h2 {
-    text-align: center;
-    color: var(--heading-color);
-    margin-bottom: 1rem;
-}
-
-.contact-form .form-group {
-    margin-bottom: 1.5rem;
-}
-
-.contact-form label {
-    display: block;
-    margin-bottom: 0.5rem;
-    color: var(--heading-color);
-}
-
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
-    padding: 0.8rem;
-    border: 1px solid var(--primary-color);
-    border-radius: 5px;
-    background: transparent;
-    color: var(--text-color);
-    font-family: 'Poppins', sans-serif;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-    outline: none;
-    border-color: var(--primary-color);
-}
-
-.contact-form button {
-    display: inline-block;
-    padding: 0.8rem 1.5rem;
-    background: var(--primary-color);
-    color: white;
-    text-decoration: none;
-    border-radius: 25px;
-    transition: transform 0.3s, box-shadow 0.3s;
-    margin-top: 1rem;
-    cursor: pointer;
-    width: 100%;
-}
-
-.contact-form button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(243, 156, 18, 0.4);
-}
+        /* Glitch effect for hero title */
+        .glitch {
+            position: relative;
+            color: var(--heading-color);
+            font-size: 4rem;
+            letter-spacing: 0.5rem;
+            animation: glitch-skew 1s infinite linear alternate-reverse;
+        }
+        
+        .glitch::before {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            left: 2px;
+            text-shadow: -2px 0 #ff00c1;
+            clip: rect(44px, 450px, 56px, 0);
+            animation: glitch-anim 5s infinite linear alternate-reverse;
+        }
+        
+        .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            left: -2px;
+            text-shadow: -2px 0 #00fff9, 2px 2px #ff00c1;
+            clip: rect(44px, 450px, 56px, 0);
+            animation: glitch-anim2 5s infinite linear alternate-reverse;
+        }
+        
+        /* Typewriter effect for subtitle */
+        .typewriter {
+            overflow: hidden;
+            border-right: .15em solid var(--primary-color);
+            white-space: nowrap;
+            margin: 0 auto;
+            letter-spacing: .15em;
+            animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+        }
+        
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: var(--primary-color) }
+        }
+        
+        @keyframes glitch-anim {
+            0% { clip: rect(31px, 9999px, 94px, 0); transform: skew(0.65deg); }
+            5% { clip: rect(70px, 9999px, 71px, 0); transform: skew(0.38deg); }
+            10% { clip: rect(33px, 9999px, 7px, 0); transform: skew(0.1deg); }
+            15% { clip: rect(76px, 9999px, 95px, 0); transform: skew(0.74deg); }
+            20% { clip: rect(78px, 9999px, 70px, 0); transform: skew(0.97deg); }
+            25% { clip: rect(41px, 9999px, 98px, 0); transform: skew(0.4deg); }
+            30% { clip: rect(11px, 9999px, 59px, 0); transform: skew(0.29deg); }
+            35% { clip: rect(40px, 9999px, 31px, 0); transform: skew(0.89deg); }
+            40% { clip: rect(54px, 9999px, 65px, 0); transform: skew(0.67deg); }
+            45% { clip: rect(89px, 9999px, 98px, 0); transform: skew(0.4deg); }
+            50% { clip: rect(82px, 9999px, 32px, 0); transform: skew(0.01deg); }
+            55% { clip: rect(24px, 9999px, 16px, 0); transform: skew(0.66deg); }
+            60% { clip: rect(64px, 9999px, 34px, 0); transform: skew(0.98deg); }
+            65% { clip: rect(9px, 9999px, 77px, 0); transform: skew(0.09deg); }
+            70% { clip: rect(19px, 9999px, 13px, 0); transform: skew(0.99deg); }
+            75% { clip: rect(85px, 9999px, 61px, 0); transform: skew(0.87deg); }
+            80% { clip: rect(61px, 9999px, 47px, 0); transform: skew(0.9deg); }
+            85% { clip: rect(16px, 9999px, 86px, 0); transform: skew(0.41deg); }
+            90% { clip: rect(36px, 9999px, 100px, 0); transform: skew(0.24deg); }
+            95% { clip: rect(93px, 9999px, 46px, 0); transform: skew(0.45deg); }
+            100% { clip: rect(41px, 9999px, 87px, 0); transform: skew(0.02deg); }
+        }
+        
+        @keyframes glitch-anim2 {
+            0% { clip: rect(65px, 9999px, 100px, 0); transform: skew(0.3deg); }
+            5% { clip: rect(35px, 9999px, 7px, 0); transform: skew(0.05deg); }
+            10% { clip: rect(28px, 9999px, 78px, 0); transform: skew(0.71deg); }
+            15% { clip: rect(54px, 9999px, 96px, 0); transform: skew(0.01deg); }
+            20% { clip: rect(32px, 9999px, 44px, 0); transform: skew(0.99deg); }
+            25% { clip: rect(6px, 9999px, 11px, 0); transform: skew(0.09deg); }
+            30% { clip: rect(88px, 9999px, 19px, 0); transform: skew(0.05deg); }
+            35% { clip: rect(90px, 9999px, 4px, 0); transform: skew(0.02deg); }
+            40% { clip: rect(56px, 9999px, 70px, 0); transform: skew(0.4deg); }
+            45% { clip: rect(81px, 9999px, 100px, 0); transform: skew(0.22deg); }
+            50% { clip: rect(61px, 9999px, 13px, 0); transform: skew(0.6deg); }
+            55% { clip: rect(6px, 9999px, 65px, 0); transform: skew(0.34deg); }
+            60% { clip: rect(58px, 9999px, 12px, 0); transform: skew(0.77deg); }
+            65% { clip: rect(53px, 9999px, 21px, 0); transform: skew(0.98deg); }
+            70% { clip: rect(60px, 9999px, 25px, 0); transform: skew(0.63deg); }
+            75% { clip: rect(93px, 9999px, 11px, 0); transform: skew(0.42deg); }
+            80% { clip: rect(26px, 9999px, 73px, 0); transform: skew(0.96deg); }
+            85% { clip: rect(85px, 9999px, 37px, 0); transform: skew(0.79deg); }
+            90% { clip: rect(76px, 9999px, 25px, 0); transform: skew(0.67deg); }
+            95% { clip: rect(65px, 9999px, 48px, 0); transform: skew(0.33deg); }
+            100% { clip: rect(10px, 9999px, 47px, 0); transform: skew(0.02deg); }
+        }
+        
+        @keyframes glitch-skew {
+            0% { transform: skew(-1deg); }
+            10% { transform: skew(0deg); }
+            20% { transform: skew(0deg); }
+            30% { transform: skew(0deg); }
+            40% { transform: skew(-1deg); }
+            50% { transform: skew(-1deg); }
+            60% { transform: skew(0deg); }
+            70% { transform: skew(1deg); }
+            80% { transform: skew(0deg); }
+            90% { transform: skew(1deg); }
+            100% { transform: skew(0deg); }
+        }
